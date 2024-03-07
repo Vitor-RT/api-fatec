@@ -1,5 +1,6 @@
 package br.com.api.fatec.apifatec;
 
+import org.antlr.v4.runtime.atn.SemanticContext.AND;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,26 @@ public class ApiFatecApplication {
 	@RequestMapping("/numero/{num}")
 	Integer numero2(@PathVariable Integer num) {
 		return num;
+	}
+	@RequestMapping("/idade/{num}")
+	String idade(@PathVariable int num) {
+		String faixaetaria;
+		if (num >= 0 && num < 12) {
+			faixaetaria = "Criança";
+		}
+		else if (num >= 12 && num <= 18) {
+			faixaetaria = "Adolescente";
+		}
+		else if (num >= 19 && num <= 60) {
+			faixaetaria = "Adulto";
+		}
+		else if (num > 60) {
+			faixaetaria = "Idoso";
+		}
+		else {
+			faixaetaria = "Número inválido";
+		}
+		return faixaetaria;
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(ApiFatecApplication.class, args);
