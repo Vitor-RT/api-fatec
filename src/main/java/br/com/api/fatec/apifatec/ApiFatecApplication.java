@@ -45,7 +45,7 @@ public class ApiFatecApplication {
 			faixaetaria = "Idoso";
 		}
 		else {
-			faixaetaria = "Número inválido";
+			faixaetaria = "Idade inválida";
 		}
 		return faixaetaria;
 	}
