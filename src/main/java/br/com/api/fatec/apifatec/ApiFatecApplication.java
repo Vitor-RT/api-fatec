@@ -1,13 +1,11 @@
 package br.com.api.fatec.apifatec;
 
-import org.antlr.v4.runtime.atn.SemanticContext.AND;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import jakarta.websocket.server.PathParam;
 
 @RestController
 @SpringBootApplication
@@ -29,25 +27,32 @@ public class ApiFatecApplication {
 	Integer numero2(@PathVariable Integer num) {
 		return num;
 	}
-	@RequestMapping("/idade/{num}")
-	String idade(@PathVariable int num) {
+	@RequestMapping(value = "/idade/{numStr}", method = RequestMethod.GET)
+	String idade(@PathVariable String numStr) {
 		String faixaetaria;
-		if (num >= 0 && num < 12) {
-			faixaetaria = "Criança";
+		try {
+			int num = Integer.parseInt(numStr);
+			if (num < 0) {
+				throw new NumberFormatException();
+			}
+			else if (num >= 0 && num < 12) {
+				faixaetaria = "Criança";
+			}
+			else if (num >= 12 && num <= 18) {
+				faixaetaria = "Adolescente";
+			}
+			else if (num >= 19 && num <= 60) {
+				faixaetaria = "Adulto";
+			}
+			else{
+				faixaetaria = "Idoso";
+			}
+			return faixaetaria;
 		}
-		else if (num >= 12 && num <= 18) {
-			faixaetaria = "Adolescente";
-		}
-		else if (num >= 19 && num <= 60) {
-			faixaetaria = "Adulto";
-		}
-		else if (num > 60) {
-			faixaetaria = "Idoso";
-		}
-		else {
+		catch (NumberFormatException e){
 			faixaetaria = "Idade inválida";
+			return faixaetaria;
 		}
-		return faixaetaria;
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(ApiFatecApplication.class, args);
