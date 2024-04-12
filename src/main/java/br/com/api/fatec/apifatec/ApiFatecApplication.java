@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import br.com.api.fatec.apifatec.domain.cliente.ClienteRepository;
+import br.com.api.fatec.apifatec.domain.produto.ProdutoRepository;
 import br.com.api.fatec.apifatec.entities.Cliente;
+import br.com.api.fatec.apifatec.entities.Produto;
 
 @SpringBootApplication
 public class ApiFatecApplication {
@@ -23,12 +25,22 @@ public class ApiFatecApplication {
 			clienteRepository.save(cliente);
 			
 			Cliente cliente2 = new Cliente();
-			cliente2.setNome("Arthur");
-			cliente2.setEmail("h2danilosfatec@hotmail.com");
-			cliente2.setEndereco("Rua xxx, 126");
-			cliente2.setRazaoSocial("Arthur");
+			cliente2.setNome("Ciclano");
+			cliente2.setEmail("ciclano@hotmail.com");
+			cliente2.setEndereco("Rua xxx, 1");
+			cliente2.setRazaoSocial("Ciclano Eireli");
 
 			clienteRepository.save(cliente2);
+		};
+	}
+	public CommandLineRunner run(@Autowired ProdutoRepository produtoRepository) {
+		return args ->{
+			Produto produto = new Produto();
+			produto.setDescricao("Notebook");
+			produto.setPreco(2500.00);
+			produto.setEstoque(10);
+			produto.setAtivo(true);
+			produtoRepository.save(produto);
 		};
 	}
 	public static void main(String[] args) {
