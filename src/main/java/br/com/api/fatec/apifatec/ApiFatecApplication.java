@@ -14,7 +14,7 @@ import br.com.api.fatec.apifatec.entities.Produto;
 @SpringBootApplication
 public class ApiFatecApplication {
 	@Bean
-	public CommandLineRunner run(@Autowired ClienteRepository clienteRepository) {
+	public CommandLineRunner run1(@Autowired ClienteRepository clienteRepository) {
 		return args ->{
 			Cliente cliente = new Cliente();
 			cliente.setNome("Fulano");
@@ -33,7 +33,8 @@ public class ApiFatecApplication {
 			clienteRepository.save(cliente2);
 		};
 	}
-	public CommandLineRunner run(@Autowired ProdutoRepository produtoRepository) {
+	@Bean
+	public CommandLineRunner run2(@Autowired ProdutoRepository produtoRepository) {
 		return args ->{
 			Produto produto = new Produto();
 			produto.setDescricao("Notebook");
