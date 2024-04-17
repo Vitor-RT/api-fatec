@@ -10,23 +10,73 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "pedido_venda_item")
-public class Pedido_venda_item {
+public class PedidoVendaItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "pedido_venda_id")
+    @JsonIgnore
+    private PedidoVenda pedidoVenda;
+
+    @ManyToOne
+    @JoinColumn(name = "produto_id")
+    private Produto produto;
+
     private Integer quantidade;
 
-    @Column(nullable = false)
-    private Double valor_total;
+    @Column(name = "valor_unitario", precision = 12, scale = 2)
+    private BigDecimal valorUnitario;
 
-    @Column(nullable = false)
-    private Double valor_unitario;
+    @Column(name = "valor_total", precision = 12, scale = 2)
+    private BigDecimal valorTotal;
 
-    @Column(nullable = false)
-    private Integer pedido_venda_id;
+    public Integer getId() {
+        return id;
+    }
 
-    @Column(nullable = false)
-    private Integer produto_id;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public PedidoVenda getPedidoVenda() {
+        return pedidoVenda;
+    }
+
+    public void setPedidoVenda(PedidoVenda pedidoVenda) {
+        this.pedidoVenda = pedidoVenda;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public BigDecimal getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public void setValorUnitario(BigDecimal valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
+
+    public BigDecimal getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(BigDecimal valorTotal) {
+        this.valorTotal = valorTotal;
+    }
 }
