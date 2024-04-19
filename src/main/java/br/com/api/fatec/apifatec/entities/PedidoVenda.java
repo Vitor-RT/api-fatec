@@ -1,7 +1,6 @@
 package br.com.api.fatec.apifatec.entities;
 
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,8 @@ public class PedidoVenda {
     @Column(precision = 20, scale = 2, nullable = false)
     private BigDecimal total;
 
-    @Enumerated(EnumType.STRING, nullable = false)
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private PedidoVendaStatusEnum status;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedidoVenda", orphanRemoval = true)

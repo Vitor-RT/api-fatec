@@ -31,8 +31,7 @@ public class ClienteService {
 	public Cliente atualizarCliente(Long id, Cliente cliente) {
 		Cliente clienteCadastradoCliente = encontrarClientePorId(id);
 
-		if (clienteCadastradoCliente == null)
-		{
+		if (clienteCadastradoCliente == null){
 			return null;
 		} else {
 			clienteCadastradoCliente.setNome(cliente.getNome());

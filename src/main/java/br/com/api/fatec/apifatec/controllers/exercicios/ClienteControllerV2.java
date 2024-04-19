@@ -33,8 +33,7 @@ public class ClienteControllerV2 {
 	@GetMapping("/{id}")
 	public ResponseEntity<ClienteDTO> encontrarClientePorId(@PathVariable Long id) {
 		ClienteDTO cliente = ClienteMapper.toDTO(clienteService.encontrarClientePorId(id));
-		return cliente != null ? new ResponseEntity<>(cliente, HttpStatus.OK)
-				: new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		return cliente != null ? new ResponseEntity<>(cliente, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 
 	@PostMapping
