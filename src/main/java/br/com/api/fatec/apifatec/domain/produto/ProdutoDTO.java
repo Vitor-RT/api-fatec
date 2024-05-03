@@ -1,9 +1,11 @@
 package br.com.api.fatec.apifatec.domain.produto;
 
+import java.math.BigDecimal;
+
 public class ProdutoDTO {
     private Long id;
     private String descricao;
-    private Double preco;
+    private BigDecimal preco;
     private Integer quantidade_estoque;
     private Boolean ativo;
     
@@ -19,10 +21,10 @@ public class ProdutoDTO {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Double getPreco() {
+	public BigDecimal getPreco() {
 		return preco;
 	}
-	public void setPreco(Double preco) {
+	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
 	public Integer getEstoque() {

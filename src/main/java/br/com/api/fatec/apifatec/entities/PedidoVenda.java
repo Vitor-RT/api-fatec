@@ -90,4 +90,10 @@ public class PedidoVenda {
         this.items.add(item);
         item.setPedidoVenda(this);
     }
+    
+    public void setTotal() {
+        this.total = this.items.stream()
+                .map(PedidoVendaItem::getValorTotal)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
 }

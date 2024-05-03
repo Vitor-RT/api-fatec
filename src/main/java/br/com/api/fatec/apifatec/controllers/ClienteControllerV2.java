@@ -1,4 +1,4 @@
-package br.com.api.fatec.apifatec.controllers.exercicios;
+package br.com.api.fatec.apifatec.controllers;
 
 import java.util.List;
 

@@ -84,4 +84,8 @@ public class PedidoVendaItem {
     public void setValorTotal(BigDecimal valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+    public void setValorTotalItem() {
+        this.valorTotal = new BigDecimal(this.quantidade).multiply(this.valorUnitario);
+    }
 }
