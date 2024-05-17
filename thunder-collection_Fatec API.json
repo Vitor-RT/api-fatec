@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Fatec API",
     "collectionId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
-    "dateExported": "2024-05-17T01:14:39.913Z",
+    "dateExported": "2024-05-17T01:41:48.172Z",
     "version": "1.2",
     "folders": [
         {
@@ -73,12 +73,12 @@
             "method": "DELETE",
             "sortNum": 10000,
             "created": "2024-05-17T01:00:03.592Z",
-            "modified": "2024-05-17T01:00:49.864Z",
+            "modified": "2024-05-17T01:39:24.212Z",
             "headers": [],
             "params": [
                 {
                     "name": "id",
-                    "value": "",
+                    "value": "1",
                     "isPath": true
                 }
             ]
@@ -252,8 +252,13 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2024-05-17T01:10:38.021Z",
-            "modified": "2024-05-17T01:11:00.353Z",
-            "headers": []
+            "modified": "2024-05-17T01:41:27.470Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 0,\n  \"emissao\": \"2024-05-16\",\n  \"total\": 200,\n  \"status\": \"CONCLUIDO\",\n  \"items\": [\n      {\n        \n      }\n    ]\n}",
+                "form": []
+            }
         },
         {
             "_id": "dd556668-63cd-4c9b-a75f-6d47ac4c533f",
@@ -325,5 +330,5 @@
             "headers": []
         }
     ],
-    "ref": "vsbJxvodFo2nf0LI9zpujs9OfEF72kJKvyoeiJLNABOQ9PeZ3-1L9Hf7hMwgdUEntuRHVm2fH2V3WrWcYXjAxA"
+    "ref": "vsbJxvodFo2nf0LI9zpujs9OfEF72kJKvyoeiJLNABPYTttJPis6Ql2oPSVB-JnOr2bsAaPmtqriZM-14wf3RQ"
 }

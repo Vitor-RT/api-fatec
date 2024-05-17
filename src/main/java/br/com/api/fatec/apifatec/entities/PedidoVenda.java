@@ -86,6 +86,10 @@ public class PedidoVenda {
         return items;
     }
 
+    public void setItems() {
+        reutnrs
+    }
+
     public void addItem(PedidoVendaItem item) {
         this.items.add(item);
         item.setPedidoVenda(this);
