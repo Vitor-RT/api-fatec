@@ -41,4 +41,12 @@ public class ClienteService {
 			return clienteRepository.save(clienteCadastradoCliente);
 		}
 	}
+
+	public List<Cliente> buscarPorNome(String nome) {
+		//Forma 1
+		return clienteRepository.findByNomeContainingIgnoreCase(nome);
+
+		//Forma 2
+		//return clienteRepository.findByNome(nome);
+	}
 }

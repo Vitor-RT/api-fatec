@@ -1,0 +1,329 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Fatec API",
+    "collectionId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+    "dateExported": "2024-05-17T01:14:39.913Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Get",
+            "containerId": "",
+            "created": "2024-05-17T01:13:48.472Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "bb6d57b0-209a-4879-a5e9-f801662f8508",
+            "name": "Post",
+            "containerId": "",
+            "created": "2024-05-17T01:14:08.262Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "2331cb8c-e293-4a96-83d3-cd751aa08b9c",
+            "name": "Put",
+            "containerId": "",
+            "created": "2024-05-17T01:14:23.463Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "e0a6304c-3190-4b93-bbcc-8455c4c4af98",
+            "name": "Delete",
+            "containerId": "",
+            "created": "2024-05-17T01:14:33.130Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "4e1b6fb8-158b-4bb9-b46c-478c08819bc2",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "bb6d57b0-209a-4879-a5e9-f801662f8508",
+            "name": "Envio de requisição Body",
+            "url": "localhost:4530/api/pedido-venda/v3",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-17T00:11:54.427Z",
+            "modified": "2024-05-17T00:23:23.739Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 0,\n  \"emissao\": \"2024-05-16\",\n  \"total\": 100,\n  \"status\": \"CONCLUIDO\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b628a42d-3a46-4fa0-b093-b6dcfa440b1c",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Listar Todos os Clientes",
+            "url": "localhost:4530/api/clientes/v1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-17T00:27:00.586Z",
+            "modified": "2024-05-17T00:27:23.941Z",
+            "headers": []
+        },
+        {
+            "_id": "9ca07c1c-837a-41fc-9543-0b4b8455d92e",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "e0a6304c-3190-4b93-bbcc-8455c4c4af98",
+            "name": "Deletar um Cliente",
+            "url": "localhost:4530/api/clientes/v1/{id}",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2024-05-17T01:00:03.592Z",
+            "modified": "2024-05-17T01:00:49.864Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "473c8aff-3854-4a6b-bb72-37e53749bb7c",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "2331cb8c-e293-4a96-83d3-cd751aa08b9c",
+            "name": "Atualizar um Cliente Existente",
+            "url": "localhost:4530/api/clientes/v1/{id}",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-05-17T01:04:03.933Z",
+            "modified": "2024-05-17T01:04:25.411Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "2f796a79-f698-4e46-9df4-376d9aa40ff2",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Buscar Clientes por Nome",
+            "url": "localhost:4530/api/clientes/v1/buscar-por-nome/{nome}",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-17T00:45:11.586Z",
+            "modified": "2024-05-17T01:01:48.130Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "nome",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "ba53c6ed-f4c5-4239-97b1-88439e8e8869",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "bb6d57b0-209a-4879-a5e9-f801662f8508",
+            "name": "Salvar um Novo Cliente",
+            "url": "localhost:4530/api/clientes/v1",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-17T00:57:45.398Z",
+            "modified": "2024-05-17T00:59:38.730Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "8ede1324-f4b2-43af-9147-75552ff0c64f",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "e0a6304c-3190-4b93-bbcc-8455c4c4af98",
+            "name": "Deletar um Produto",
+            "url": "localhost:4530/api/produtos/{id}",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-05-17T01:09:17.943Z",
+            "modified": "2024-05-17T01:10:25.583Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "5d688328-f0f2-4dbc-b5f6-5c724ccfbfb3",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "2331cb8c-e293-4a96-83d3-cd751aa08b9c",
+            "name": "Atualizar um Produto Existente",
+            "url": "localhost:4530/api/produtos/{id}",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-05-17T01:09:50.239Z",
+            "modified": "2024-05-17T01:10:16.588Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "6a02ab19-d0a5-46ac-9914-2aba14b3a700",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Encontrar Cliente por ID",
+            "url": "localhost:4530/api/clientes/v1/{id}",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-17T00:56:52.207Z",
+            "modified": "2024-05-17T01:01:09.789Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "628b9e00-7eb1-47c5-b88d-a2b0d8419ddb",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "bb6d57b0-209a-4879-a5e9-f801662f8508",
+            "name": "Salvar um Novo Produto",
+            "url": "localhost:4530/api/produtos/v1",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-17T01:08:40.257Z",
+            "modified": "2024-05-17T01:08:58.362Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "8a78ccd8-17c8-4747-9e6b-3e493ceec9bc",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "2331cb8c-e293-4a96-83d3-cd751aa08b9c",
+            "name": "Atualizar os Dados de um Pedido",
+            "url": "localhost:4530/api/pedido-venda/{id}",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-05-17T01:12:24.535Z",
+            "modified": "2024-05-17T01:12:46.176Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "d19cdafd-c710-4313-b55f-eb57c8750d49",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Listar Todos os Produtos",
+            "url": "localhost:4530/api/produtos/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-17T01:06:43.127Z",
+            "modified": "2024-05-17T01:07:02.407Z",
+            "headers": []
+        },
+        {
+            "_id": "c443c93c-ee7d-49b2-940b-b67c56563e6f",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "bb6d57b0-209a-4879-a5e9-f801662f8508",
+            "name": "Adicionar um Novo Pedido",
+            "url": "localhost:4530/api/pedido-venda",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-05-17T01:10:38.021Z",
+            "modified": "2024-05-17T01:11:00.353Z",
+            "headers": []
+        },
+        {
+            "_id": "dd556668-63cd-4c9b-a75f-6d47ac4c533f",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "2331cb8c-e293-4a96-83d3-cd751aa08b9c",
+            "name": "Cancelar um Pedido",
+            "url": "localhost:4530/api/pedido-venda/{id}/cancelar",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-17T01:13:04.631Z",
+            "modified": "2024-05-17T01:13:32.486Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "22b5f287-1b27-42d8-b6a6-bed9e3ece893",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Encontrar Produto por ID",
+            "url": "localhost:4530/api/produtos/v1/{id}",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-05-17T01:08:11.914Z",
+            "modified": "2024-05-17T01:08:22.947Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "6ea7ad55-b502-4ed9-972d-9ca98ef28acb",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Buscar um Pedido pelo ID",
+            "url": "/api/pedido-venda/v1/{id}",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-05-17T01:11:21.962Z",
+            "modified": "2024-05-17T01:11:37.874Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "b7522920-a213-40d8-8937-609ee3d07181",
+            "colId": "005de8a2-08e8-4cc3-ac4c-dde5aeedf60f",
+            "containerId": "7907e3ab-6bd3-4ecf-981b-d8212bc9006b",
+            "name": "Listar Todos os Pedidos",
+            "url": "localhost:4530/api/pedido-venda",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-05-17T01:11:51.729Z",
+            "modified": "2024-05-17T01:12:10.463Z",
+            "headers": []
+        }
+    ],
+    "ref": "vsbJxvodFo2nf0LI9zpujs9OfEF72kJKvyoeiJLNABOQ9PeZ3-1L9Hf7hMwgdUEntuRHVm2fH2V3WrWcYXjAxA"
+}
