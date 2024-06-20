@@ -86,8 +86,8 @@ public class PedidoVenda {
         return items;
     }
 
-    public void setItems() {
-        reutnrs
+    public void setItems(List<PedidoVendaItem> items) {
+        this.items = items;
     }
 
     public void addItem(PedidoVendaItem item) {

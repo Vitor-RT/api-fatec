@@ -1,0 +1,108 @@
+[
+  {
+    "id": "051ff710-4b48-47c6-bde6-8c4ac7a48cfc",
+    "name": "Fatec API",
+    "description": "",
+    "parentCollection": "",
+    "requests": [
+      {
+        "id": "d1226a8d-4145-42ca-ba14-c8320e1a268f",
+        "executionDate": "",
+        "collectionId": "051ff710-4b48-47c6-bde6-8c4ac7a48cfc",
+        "name": "Untitled Request",
+        "description": "",
+        "requestMethodDTO": {
+          "type": "GET"
+        },
+        "url": "cvcc",
+        "queryParams": [],
+        "pathVariables": [],
+        "headers": [
+          {
+            "selected": true,
+            "key": "user-agent",
+            "type": {
+              "type": "RAW"
+            },
+            "rawDTO": {
+              "value": "Keyrunner"
+            }
+          },
+          {
+            "selected": true,
+            "key": "cache-control",
+            "type": {
+              "type": "RAW"
+            },
+            "rawDTO": {
+              "value": "No-Cache"
+            }
+          },
+          {
+            "selected": true,
+            "key": "Accept-Encoding",
+            "type": {
+              "type": "RAW"
+            },
+            "rawDTO": {
+              "value": "gzip, deflate, br"
+            }
+          },
+          {
+            "selected": true,
+            "key": "Connection",
+            "type": {
+              "type": "RAW"
+            },
+            "rawDTO": {
+              "value": "keep-alive"
+            }
+          },
+          {
+            "selected": true,
+            "key": "accept",
+            "type": {
+              "type": "RAW"
+            },
+            "rawDTO": {
+              "value": "*/*"
+            }
+          }
+        ],
+        "bodyDTO": {
+          "Content-Type": "None",
+          "raw": {
+            "value": "{}"
+          },
+          "binary": ""
+        },
+        "expectedResponseDTO": {
+          "body": "{}",
+          "Content-Type": "application/json",
+          "statusCode": 0,
+          "pathsToIgnore": [],
+          "headers": []
+        },
+        "actualResponseDTO": {
+          "body": "{}",
+          "statusCode": 0,
+          "headers": {}
+        },
+        "authDTO": {
+          "typeDTO": "NONE",
+          "valueDTO": []
+        },
+        "tests": [
+          {
+            "test": "",
+            "action": "",
+            "value": ""
+          }
+        ],
+        "tenantId": "65e7ec5fb42ac535820d984c",
+        "projectId": "",
+        "workspaceId": null
+      }
+    ]
+  }
+]
