@@ -140,4 +140,8 @@ public class PedidoVendaService {
             }
         }).orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
     }
+
+    public List<PedidoVenda> getPedidosByClienteId(Long clienteId) {
+        return pedidoVendaRepository.findByClienteId(clienteId);
+    }
 }
