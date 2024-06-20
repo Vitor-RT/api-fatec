@@ -5,7 +5,9 @@ import java.util.List;
 import br.com.api.fatec.apifatec.domain.cliente.ClienteService;
 import br.com.api.fatec.apifatec.domain.cliente.ClienteMapper;
 import br.com.api.fatec.apifatec.domain.cliente.ClienteDTO;
+import br.com.api.fatec.apifatec.domain.pedido.PedidoVendaService;
 import br.com.api.fatec.apifatec.entities.Cliente;
+import br.com.api.fatec.apifatec.entities.PedidoVenda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,32 +23,42 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/clientes/v2")
 public class ClienteControllerV2 {
 
-	@Autowired
-	private ClienteService clienteService;
+    @Autowired
+    private ClienteService clienteService;
 
-	@GetMapping
-	public ResponseEntity<List<ClienteDTO>> listarClientes() {
-		List<ClienteDTO> clientes = ClienteMapper.toDTOList(clienteService.listarClientes());
-		return new ResponseEntity<>(clientes, HttpStatus.OK);
-	}
+    @Autowired
+    private PedidoVendaService pedidoVendaService;
 
-	@GetMapping("/{id}")
-	public ResponseEntity<ClienteDTO> encontrarClientePorId(@PathVariable Long id) {
-		ClienteDTO cliente = ClienteMapper.toDTO(clienteService.encontrarClientePorId(id));
-		return cliente != null ? new ResponseEntity<>(cliente, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
+    @GetMapping
+    public ResponseEntity<List<ClienteDTO>> listarClientes() {
+        List<ClienteDTO> clientes = ClienteMapper.toDTOList(clienteService.listarClientes());
+        return new ResponseEntity<>(clientes, HttpStatus.OK);
+    }
 
-	@PostMapping
-	public ResponseEntity<ClienteDTO> salvarCliente(@RequestBody ClienteDTO clienteDTO) {
-		Cliente cliente = ClienteMapper.toEntity(clienteDTO);
-		ClienteDTO clienteSalvo = ClienteMapper.toDTO(clienteService.salvarCliente(cliente));
-		return new ResponseEntity<>(clienteSalvo, HttpStatus.CREATED);
-	}
+    @GetMapping("/{id}")
+    public ResponseEntity<ClienteDTO> encontrarClientePorId(@PathVariable Long id) {
+        ClienteDTO cliente = ClienteMapper.toDTO(clienteService.encontrarClientePorId(id));
+        return cliente != null ? new ResponseEntity<>(cliente, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deletarCliente(@PathVariable Long id) {
-		clienteService.deletarCliente(id);
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	}
+    @PostMapping
+    public ResponseEntity<ClienteDTO> salvarCliente(@RequestBody ClienteDTO clienteDTO) {
+        Cliente cliente = ClienteMapper.toEntity(clienteDTO);
+        ClienteDTO clienteSalvo = ClienteMapper.toDTO(clienteService.salvarCliente(cliente));
+        return new ResponseEntity<>(clienteSalvo, HttpStatus.CREATED);
+    }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarCliente(@PathVariable Long id) {
+        clienteService.deletarCliente(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/{clienteId}/pedidos")
+    public ResponseEntity<List<PedidoVenda>> getPedidosByClienteId(@PathVariable Long clienteId) {
+        List<PedidoVenda> pedidos = pedidoVendaService.findByClienteId(clienteId);
+        return pedidos != null && !pedidos.isEmpty() ? 
+               new ResponseEntity<>(pedidos, HttpStatus.OK) : 
+               new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
