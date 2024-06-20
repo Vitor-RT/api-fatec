@@ -66,13 +66,5 @@ public class ClienteController {
         return new ResponseEntity<>(clienteAtualizado, HttpStatus.OK);
     }
 
-    @GetMapping("/{clienteId}/pedidos")
-    public ResponseEntity<List<PedidoVenda>> getPedidosByClienteId(@PathVariable Long clienteId) {
-        List<PedidoVenda> pedidos = pedidoVendaService.getPedidosByClienteId(clienteId);
-        if (pedidos.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.ok(pedidos);
-        }
-    }
+   
 }
