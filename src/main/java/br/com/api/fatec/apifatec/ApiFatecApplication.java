@@ -42,12 +42,19 @@ public class ApiFatecApplication {
 
 			clienteRepository.save(cliente2);
 
-			Produto produto = new Produto();
-			produto.setDescricao("Notebook");
-			produto.setPreco(new BigDecimal(2500.00));
-			produto.setEstoque(10);
-			produto.setAtivo(true);
-			produtoRepository.save(produto);
+			Produto produto1 = new Produto();
+			produto1.setDescricao("Notebook");
+			produto1.setPreco(new BigDecimal(2500.00));
+			produto1.setEstoque(10);
+			produto1.setAtivo(true);
+			produtoRepository.save(produto1);
+
+			Produto produto2 = new Produto();
+			produto2.setDescricao("Celular");
+			produto2.setPreco(new BigDecimal(1500.00));
+			produto2.setEstoque(5);
+			produto2.setAtivo(true);
+			produtoRepository.save(produto2);
 
 			PedidoVenda ped = new PedidoVenda();
 			ped.setCliente(cliente2);
@@ -59,11 +66,11 @@ public class ApiFatecApplication {
 			PedidoVendaItem item1 = new PedidoVendaItem();
 
 			//Inserindo valores nas propriedades de PedidoVendaItem
-			item1.setProduto(produto);
+			item1.setProduto(produto1);
 			item1.setQuantidade(10);
-			item1.setValorUnitario(new BigDecimal(10));
+			item1.setValorUnitario(new BigDecimal(1500));
 			item1.setValorTotal(item1.getValorUnitario().multiply(BigDecimal.valueOf(item1.getQuantidade())));
-
+			
 			//Adicionando Item no Pedido Venda
 			ped.addItem(item1);
 
@@ -71,9 +78,9 @@ public class ApiFatecApplication {
 			PedidoVendaItem item2 = new PedidoVendaItem();
 
 			//Inserindo valores nas propriedades de PedidoVendaItem
-			item2.setProduto(produto);
-			item2.setQuantidade(10);
-			item2.setValorUnitario(new BigDecimal(10));
+			item2.setProduto(produto2);
+			item2.setQuantidade(5);
+			item2.setValorUnitario(new BigDecimal(1000));
 			item2.setValorTotal(item2.getValorUnitario().multiply(BigDecimal.valueOf(item2.getQuantidade())));
 
 			//Adicionando Item no Pedido Venda
